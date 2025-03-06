@@ -3,7 +3,8 @@ const database=require("./database");
 const bodyParser = require("body-parser");
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
+
 database.connect(err => {
   if (err) {
     console.error("Database connection failed: " + err.stack);
